@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+
+</head>
+<body>
+  <nav class="navbar navbar-light" style="background-color: #6aa6d1;">
+    <div class="container-fluid">
+      <a class="navbar-brand">Product Details</a>
+      <form class="d-flex">
+       <!-- Button trigger modal -->
+<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#createProduct">
+  Create
+</button>
+      </form>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <table class="table table-hover m-2">
+        <thead>
+          <tr>
+            <th scope="col">Item ID</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Status</th>
+            <th></th><th></th>
+          </tr>
+        </thead>
+        <tbody id="list_body">
+        </tbody>
+    </table>
+
+    <div class="modal fade" id="createProduct" tabindex="-1" aria-labelledby="createProductLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createProductLabel">Add Product</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" id="create_buttonClose" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-success" role="alert" id="create_success" style="display: none;">
+              Product Update Successful!!!
+            </div>
+            <form type="submit" method="get/post">
+              <div class="form-outline mb-4">
+                <label class="fs-5 fw-light mb-2">Product Name</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Name" id="create_name" required/>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="fs-5 fw-light mb-2">Product Amount</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Price" id="create_amount" required/>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="fs-5 fw-light mb-2">Product Quantity</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Quantity" id="create_qty" required/>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="fs-5 fw-light mb-2">Product Status</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Status" id="create_status" required/>
+              </div>
+              <button type="button" class="btn btn-warning" id="create_save">Save changes</button>
+            </form>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="deleteProduct" tabindex="-1" aria-labelledby="deleteProductLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="delete_clodeButton"></button>
+        </div>
+        <div class="modal-body">
+          Please make sure to click <b>Confirm</b> button to delete
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning" id="delete_confirm">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <p>
+        <input type="hidden" value='[{"id":1,"name":"Laptop","price":"450000","qty":"1","status":"delivered"},{"id":2,"name":"Soap","price":"20","qty":"5","status":"Dispached"},{"id":3,"name":"Samsung Watch","price":"2890","qty":"1","status":"delivered"},{"id":4,"name":"dress","price":"678","qty":"1","status":"order Created"},{"id":5,"name":"tshirts","price":"800","qty":"2","status":"Order Created"},{"id":6,"name":"boAt Flash watch","price":"3800","qty":"1","status":"Order Created"},{"id":7,"name":"ShAUN Womens T-shirt","price":"230","qty":"4","status":"Dispatched"},{"id":8,"name":"Capri Pants","price":"1200","qty":"1","status":"Ready for delivery"},{"id":9,"name":"Bi Fold Alim purse","price":"790","qty":"1","status":"Order Created"},{"id":10,"name":"Hammonds bag","price":"2215","qty":"1","status":"Delivered"}]' id="Lists"/>
+      </p>
+</body>
+
+
+<script src="./script.js"></script>
+</html>
